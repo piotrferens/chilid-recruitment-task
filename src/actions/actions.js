@@ -4,10 +4,8 @@ export const fetchEmployees = payload => ({
     payload,
 });
 
-export const requestEmployees = () => {
-    return dispatch => {
-        fetch("https://xsolve-recruitment-task.firebaseio.com/.json")
-            .then(res => res.json())
-            .then(data => dispatch(fetchEmployees(data)));
-    };
-};
+export const SET_SORT = "SET_SORT";
+export const setSort = payload => ({
+    type: SET_SORT,
+    payload,
+});
