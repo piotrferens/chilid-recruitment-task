@@ -1,36 +1,42 @@
 {
-  "name": "xsolve-recruitment-task",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/piotrferens/xsolve-RECRUITMENT-TASK.git"
-  },
-  "keywords": [],
-  "author": "Piotr Ferens",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/piotrferens/xsolve-RECRUITMENT-TASK/issues"
-  },
-  "homepage": "https://github.com/piotrferens/xsolve-RECRUITMENT-TASK#readme",
-  "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
-    "@babel/preset-react": "^7.0.0-beta.42",
-    "babel-loader": "^8.0.0-beta",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1",
-    "babel-preset-env": "^1.6.1",
-    "copy-webpack-plugin": "^4.5.1"
-  }
+    "name": "xsolve-recruitment-task",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "NODE_ENV=development webpack-dev-server",
+        "build": "NODE_ENV=production webpack",
+        "prettier": "prettier --config .prettierrc \"src/**/*.js*\" --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/piotrferens/xsolve-RECRUITMENT-TASK.git"
+    },
+    "keywords": [],
+    "author": "Piotr Ferens",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/piotrferens/xsolve-RECRUITMENT-TASK/issues"
+    },
+    "homepage": "https://github.com/piotrferens/xsolve-RECRUITMENT-TASK#readme",
+    "dependencies": {
+        "react": "^16.3.0",
+        "react-dom": "^16.3.0",
+        "react-redux": "^5.0.7",
+        "redux": "^3.7.2",
+        "eslint": "^4.19.1",
+        "eslint-plugin-react": "^7.7.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.42",
+        "@babel/preset-env": "^7.0.0-beta.42",
+        "@babel/preset-react": "^7.0.0-beta.42",
+        "babel-loader": "^8.0.0-beta",
+        "babel-preset-env": "^1.6.1",
+        "copy-webpack-plugin": "^4.5.1",
+        "prettier": "^1.11.1",
+        "webpack": "^4.4.1",
+        "webpack-cli": "^2.0.13",
+        "webpack-dev-server": "^3.1.1"
+    }
 }
