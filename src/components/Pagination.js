@@ -14,7 +14,7 @@ class PaginationContainer extends Component {
                 >
                     -
                 </button>
-                {actualPage}
+                {actualPage + 1}
                 <button
                     disabled={actualPage === numberOfPages - 1}
                     onClick={() => this.props.setPage(actualPage + 1)}
