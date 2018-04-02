@@ -5,5 +5,9 @@ import { filterEmployeesSelector } from "./filterEmployees";
 export const numberOfPagesSelector = createSelector(
     filterEmployeesSelector,
     state => state.pagination,
-    (employees, pagination) => Math.ceil(employees.length / pagination.itemsPerPage),
+    (employees, pagination) => {
+        const pages = Math.ceil(employees.length / pagination.itemsPerPage);
+
+        return employees.length === 0 ? 1 : pages;
+    },
 );
