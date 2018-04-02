@@ -10,6 +10,10 @@ export const filter = (state = initialState, action) => {
             return {
                 ...state,
                 selected: action.payload,
+                searchPhrase:
+                    action.payload === "dateOfBirth" || state.selected === "dateOfBirth"
+                        ? ""
+                        : state.searchPhrase,
             };
         case SET_SEARCH:
             return {

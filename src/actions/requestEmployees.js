@@ -6,10 +6,13 @@ export const requestEmployees = () => {
             .then(res => res.json())
             .then(data => {
                 const results = data.employees.map(x => {
-                    const date = x.dateOfBirth.split(".");
+                    const [day, month, year, hour] = x.dateOfBirth.split(/\.| /);
+
                     return {
                         ...x,
-                        dateOfBirth: [date[1], date[0], date[2]].join("."),
+                        dateOfBirth: `${year}-${month.length === 1 ? "0" + month : month}-${
+                            day.length === 1 ? "0" + day : day
+                        } ${hour}`,
                         displayedDate: x.dateOfBirth,
                     };
                 });

@@ -9,6 +9,7 @@ import { employeesSelector } from "../selectors/employees";
 import { setSort } from "../actions/actions";
 import { Pagination } from "./Pagination";
 import { Filter } from "./Filter";
+import { Sort } from "./Sort";
 
 export class EmployeesContainer extends Component {
     componentDidMount() {
@@ -26,6 +27,7 @@ export class EmployeesContainer extends Component {
                         ))}
                     </div>
                 </Table>
+                <Sort />
                 <Pagination />
             </div>
         );

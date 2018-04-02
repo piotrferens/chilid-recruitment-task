@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setFilter, setSearch } from "../actions/actions";
+import { FilterHeader } from "./styled";
 
 class FilterContainer extends Component {
     onSelect = event => {
@@ -14,7 +15,7 @@ class FilterContainer extends Component {
 
     render() {
         return (
-            <div>
+            <FilterHeader>
                 <select value={this.props.selected} onChange={this.onSelect}>
                     <option disabled />
                     <option value="firstName">First name</option>
@@ -23,8 +24,12 @@ class FilterContainer extends Component {
                     <option value="dateOfBirth">Date of birth</option>
                     <option value="note">Note</option>
                 </select>
-                <input value={this.props.searchPhrase} onChange={this.onChange} />
-            </div>
+                {this.props.selected !== "dateOfBirth" ? (
+                    <input type="text" value={this.props.searchPhrase} onChange={this.onChange} />
+                ) : (
+                    <input type="date" onChange={this.onChange} value={this.props.searchPhrase} />
+                )}
+            </FilterHeader>
         );
     }
 }
