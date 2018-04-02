@@ -5,18 +5,16 @@ import { setFilter, setSearch } from "../actions/actions";
 import { FilterHeader } from "./styled";
 
 class FilterContainer extends Component {
-    onSelect = event => {
-        this.props.setFilter(event.target.value);
-    };
-
-    onChange = event => {
-        this.props.setSearch(event.target.value);
+    onChange = action => {
+        return event => {
+            action(event.target.value);
+        };
     };
 
     render() {
         return (
             <FilterHeader>
-                <select value={this.props.selected} onChange={this.onSelect}>
+                <select value={this.props.selected} onChange={this.onChange(this.props.setFilter)}>
                     <option disabled />
                     <option value="firstName">First name</option>
                     <option value="lastName">Last name</option>
@@ -24,11 +22,12 @@ class FilterContainer extends Component {
                     <option value="dateOfBirth">Date of birth</option>
                     <option value="note">Note</option>
                 </select>
-                {this.props.selected !== "dateOfBirth" ? (
-                    <input type="text" value={this.props.searchPhrase} onChange={this.onChange} />
-                ) : (
-                    <input type="date" onChange={this.onChange} value={this.props.searchPhrase} />
-                )}
+
+                <input
+                    type={this.props.selected !== "dateOfBirth" ? "text" : "date"}
+                    value={this.props.searchPhrase}
+                    onChange={this.onChange(this.props.setSearch)}
+                />
             </FilterHeader>
         );
     }

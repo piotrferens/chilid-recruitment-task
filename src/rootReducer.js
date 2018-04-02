@@ -7,7 +7,7 @@ import { filter } from "./reducers/filter";
 
 export const rootReducer = combineReducers({
     employees,
-    sort,
-    pagination,
     filter,
+    pagination,
+    sort,
 });

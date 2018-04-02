@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { orderBy } from "lodash";
+import orderBy from "lodash/orderBy";
 
 import { filterEmployeesSelector } from "./filterEmployees";
 
