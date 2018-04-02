@@ -1,23 +1,21 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
+
 import { setPage } from "../actions/actions";
+import { numberOfPagesSelector } from "../selectors/numberOfPages";
 
 class PaginationContainer extends Component {
     render() {
-        const { actualPage, numberOfPages } = this.props.pagination;
+        const { page } = this.props.pagination;
         return (
             <div>
-                <button
-                    disabled={actualPage === 0}
-                    onClick={() => this.props.setPage(actualPage - 1)}
-                >
+                <button disabled={page === 0} onClick={() => this.props.setPage(page - 1)}>
                     -
                 </button>
-                {actualPage + 1}
+                {page + 1}
                 <button
-                    disabled={actualPage === numberOfPages - 1}
-                    onClick={() => this.props.setPage(actualPage + 1)}
+                    disabled={page === this.props.numberOfPages - 1}
+                    onClick={() => this.props.setPage(page + 1)}
                 >
                     +
                 </button>
@@ -29,6 +27,7 @@ class PaginationContainer extends Component {
 function mapStateToProps(state) {
     return {
         pagination: state.pagination,
+        numberOfPages: numberOfPagesSelector(state),
     };
 }
 

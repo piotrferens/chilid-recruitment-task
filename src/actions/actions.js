@@ -15,3 +15,15 @@ export const setPage = payload => ({
     type: SET_PAGE,
     payload,
 });
+
+export const SET_FILTER = "SET_FILTER";
+export const setFilter = payload => ({
+    type: SET_FILTER,
+    payload,
+});
+
+export const SET_SEARCH = "SET_SEARCH";
+export const setSearch = payload => ({
+    type: SET_SEARCH,
+    payload,
+});

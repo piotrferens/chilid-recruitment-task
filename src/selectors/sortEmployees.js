@@ -1,8 +1,10 @@
 import { createSelector } from "reselect";
 import { orderBy } from "lodash";
 
+import { filterEmployeesSelector } from "./filterEmployees";
+
 export const sortEmployeesSelector = createSelector(
-    state => state.employees,
+    filterEmployeesSelector,
     state => state.sort,
     (employees, sort) =>
         orderBy(

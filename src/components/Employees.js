@@ -5,9 +5,10 @@ import { requestEmployees } from "../actions/requestEmployees";
 import { Employee } from "./Employee";
 import { Header } from "./Header";
 import { Table } from "./styled";
-import { actualEmployeesSelector } from "../selectors/actualEmployees";
+import { employeesSelector } from "../selectors/employees";
 import { setSort } from "../actions/actions";
 import { Pagination } from "./Pagination";
+import { Filter } from "./Filter";
 
 export class EmployeesContainer extends Component {
     componentDidMount() {
@@ -16,6 +17,7 @@ export class EmployeesContainer extends Component {
     render() {
         return (
             <div>
+                <Filter />
                 <Table>
                     <div style={{ minHeight: 180 }}>
                         <Header setSort={this.props.setSort} />
@@ -23,8 +25,8 @@ export class EmployeesContainer extends Component {
                             <Employee key={employee.id} employee={employee} />
                         ))}
                     </div>
-                    <Pagination />
                 </Table>
+                <Pagination />
             </div>
         );
     }
@@ -32,7 +34,7 @@ export class EmployeesContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        employees: actualEmployeesSelector(state),
+        employees: employeesSelector(state),
     };
 }
 
