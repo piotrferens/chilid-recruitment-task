@@ -86,6 +86,12 @@ export const PaginationHeader = glamorous.div({
     justifyContent: "center",
 });
 
-export const NextPage = glamorous.span({});
+export const NextPage = glamorous.button({
+    background: "none",
+    border: "none",
+});
 
-export const PreviousPage = glamorous.span({});
+export const PreviousPage = glamorous.button({
+    background: "none",
+    border: "none",
+});

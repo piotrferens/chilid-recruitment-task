@@ -18,7 +18,15 @@ export class HeaderContainer extends Component {
             <TableHeader>
                 <TableHeaderRow>
                     {filters.map(filter => (
-                        <TableHeaderCell onClick={() => this.props.setSort(filter.name)}>
+                        <TableHeaderCell
+                            key={filter.name}
+                            onClick={() => this.props.setSort(filter.name)}
+                            title={
+                                this.props.sort.order === 1 && this.props.sort.by === filter.name
+                                    ? "Sort descending"
+                                    : "Sort ascending"
+                            }
+                        >
                             {this.props.sort.by === filter.name ? (
                                 this.props.sort.order === 1 ? (
                                     <ArrowUp />

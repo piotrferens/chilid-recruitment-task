@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { setPage } from "../actions/actions";
 import { numberOfPagesSelector } from "../selectors/numberOfPages";
-import { PaginationHeader } from "./styled";
+import { PaginationHeader, NextPage, PreviousPage } from "./styled";
 
 class PaginationContainer extends Component {
     render() {
@@ -11,16 +11,19 @@ class PaginationContainer extends Component {
         return (
             <PaginationHeader>
                 <div>
-                    <button disabled={page === 0} onClick={() => this.props.setPage(page - 1)}>
+                    <PreviousPage
+                        disabled={page === 0}
+                        onClick={() => this.props.setPage(page - 1)}
+                    >
                         {"<"}
-                    </button>
+                    </PreviousPage>
                     {page + 1} of {this.props.numberOfPages}
-                    <button
+                    <NextPage
                         disabled={page === this.props.numberOfPages - 1}
                         onClick={() => this.props.setPage(page + 1)}
                     >
                         {">"}
-                    </button>
+                    </NextPage>
                 </div>
             </PaginationHeader>
         );
