@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { requestEmployees } from "../actions/requestEmployees";
 import { Employee } from "./Employee";
 import { Header } from "./Header";
-import { Table } from "./styled";
+import { Table, TableBoby } from "./styled";
 import { employeesSelector } from "../selectors/employees";
 import { setSort } from "../actions/actions";
 import { Pagination } from "./Pagination";
@@ -19,14 +19,16 @@ export class EmployeesContainer extends Component {
         return (
             <div>
                 <Filter />
-                <Table>
-                    <div style={{ minHeight: 180 }}>
+                <div>
+                    <Table>
                         <Header setSort={this.props.setSort} />
-                        {this.props.employees.map(employee => (
-                            <Employee key={employee.id} employee={employee} />
-                        ))}
-                    </div>
-                </Table>
+                        <TableBoby>
+                            {this.props.employees.map(employee => (
+                                <Employee key={employee.id} employee={employee} />
+                            ))}
+                        </TableBoby>
+                    </Table>
+                </div>
                 <Sort />
                 <Pagination />
             </div>

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
-import { Row, Field } from "./styled";
+import { TableCell, TableRow } from "./styled";
 
 export class Employee extends Component {
     render() {
         return (
-            <Row>
-                <Field>{this.props.employee.firstName}</Field>
-                <Field>{this.props.employee.lastName}</Field>
-                <Field>{this.props.employee.company}</Field>
-                <Field>{this.props.employee.displayedDate}</Field>
-                <Field>{this.props.employee.note}</Field>
-            </Row>
+            <TableRow>
+                <TableCell>{this.props.employee.firstName}</TableCell>
+                <TableCell>{this.props.employee.lastName}</TableCell>
+                <TableCell>{this.props.employee.company}</TableCell>
+                <TableCell>{this.props.employee.displayedDate}</TableCell>
+                <TableCell>{this.props.employee.note}</TableCell>
+            </TableRow>
         );
     }
 }

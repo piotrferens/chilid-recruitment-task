@@ -1,19 +1,32 @@
 import React, { Component } from "react";
 
-import { Row, Field } from "./styled";
+import { TableHeader, TableHeaderItem, TableHeaderRow } from "./styled";
 
 export class Header extends Component {
     render() {
         return (
-            <Row>
-                <Field onClick={() => this.props.setSort("firstName")}>First name</Field>
-                <Field onClick={() => this.props.setSort("lastName")}>Last name</Field>
-                <Field onClick={() => this.props.setSort("company")}>Company</Field>
-                <Field title="(DD/MM/YYYY)" onClick={() => this.props.setSort("dateOfBirth")}>
-                    Date of birth
-                </Field>
-                <Field onClick={() => this.props.setSort("note")}>Note</Field>
-            </Row>
+            <TableHeader>
+                <TableHeaderRow>
+                    <TableHeaderItem onClick={() => this.props.setSort("firstName")}>
+                        First name
+                    </TableHeaderItem>
+                    <TableHeaderItem onClick={() => this.props.setSort("lastName")}>
+                        Last name
+                    </TableHeaderItem>
+                    <TableHeaderItem onClick={() => this.props.setSort("company")}>
+                        Company
+                    </TableHeaderItem>
+                    <TableHeaderItem
+                        title="(DD/MM/YYYY)"
+                        onClick={() => this.props.setSort("dateOfBirth")}
+                    >
+                        Date of birth
+                    </TableHeaderItem>
+                    <TableHeaderItem onClick={() => this.props.setSort("note")}>
+                        Note
+                    </TableHeaderItem>
+                </TableHeaderRow>
+            </TableHeader>
         );
     }
 }
