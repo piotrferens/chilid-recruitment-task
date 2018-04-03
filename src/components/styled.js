@@ -28,13 +28,16 @@ export const TableHeaderRow = glamorous.div({
     display: "table-row",
 });
 
-export const TableHeaderItem = glamorous.div({
+export const TableHeaderCell = glamorous.div({
     display: "table-cell",
     border: "1px solid #AAAAAA",
     padding: "5px 5px",
     fontSize: 23,
     fontWeight: "bold",
     textAlign: "center",
+    cursor: "pointer",
+    background: "#6a93e8",
+    position: "relative",
 });
 
 export const TableBoby = glamorous.div({
@@ -50,6 +53,29 @@ export const TableCell = glamorous.div({
     display: "table-cell",
     border: "1px solid #AAAAAA",
     padding: "5px 5px",
+});
+
+export const ArrowUp = glamorous.div({
+    position: "absolute",
+    right: 5,
+    top: 5,
+    width: 0,
+    height: 0,
+    borderLeft: "5px solid transparent",
+    borderRight: "5px solid transparent",
+    borderBottom: "5px solid black",
+});
+
+export const ArrowDown = glamorous.div({
+    position: "absolute",
+    right: 5,
+    bottom: 5,
+    width: 0,
+    height: 0,
+    borderLeft: "5px solid transparent",
+    borderRight: "5px solid transparent",
+    borderBottom: "5px solid black",
+    transform: "rotate(180deg)",
 });
 
 export const SortField = glamorous.div({

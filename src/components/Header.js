@@ -1,32 +1,44 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import { TableHeader, TableHeaderItem, TableHeaderRow } from "./styled";
+import { setSort } from "../actions/actions";
 
-export class Header extends Component {
+import { TableHeader, TableHeaderCell, TableHeaderRow, ArrowUp, ArrowDown } from "./styled";
+
+export class HeaderContainer extends Component {
     render() {
+        const filters = [
+            { name: "firstName", text: "First name" },
+            { name: "lastName", text: "Last name" },
+            { name: "company", text: "Company" },
+            { name: "dateOfBirth", text: "Date of birth" },
+            { name: "note", text: "Note" },
+        ];
         return (
             <TableHeader>
                 <TableHeaderRow>
-                    <TableHeaderItem onClick={() => this.props.setSort("firstName")}>
-                        First name
-                    </TableHeaderItem>
-                    <TableHeaderItem onClick={() => this.props.setSort("lastName")}>
-                        Last name
-                    </TableHeaderItem>
-                    <TableHeaderItem onClick={() => this.props.setSort("company")}>
-                        Company
-                    </TableHeaderItem>
-                    <TableHeaderItem
-                        title="(DD/MM/YYYY)"
-                        onClick={() => this.props.setSort("dateOfBirth")}
-                    >
-                        Date of birth
-                    </TableHeaderItem>
-                    <TableHeaderItem onClick={() => this.props.setSort("note")}>
-                        Note
-                    </TableHeaderItem>
+                    {filters.map(filter => (
+                        <TableHeaderCell onClick={() => this.props.setSort(filter.name)}>
+                            {this.props.sort.by === filter.name ? (
+                                this.props.sort.order === 1 ? (
+                                    <ArrowUp />
+                                ) : (
+                                    <ArrowDown />
+                                )
+                            ) : null}
+                            {filter.text}
+                        </TableHeaderCell>
+                    ))}
                 </TableHeaderRow>
             </TableHeader>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        sort: state.sort,
+    };
+}
+
+export const Header = connect(mapStateToProps, { setSort })(HeaderContainer);
