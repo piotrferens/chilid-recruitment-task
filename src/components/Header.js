@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setSort } from "../actions/actions";
-
 import { TableHeader, TableHeaderCell, TableHeaderRow, ArrowUp, ArrowDown } from "./styled";
 
 export class HeaderContainer extends Component {

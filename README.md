@@ -11,4 +11,4 @@ $ yarn start
 ```
 
 3.  Go to http://localhost:9000/
-4.  Application is hosted on Firebase -> https://xsolve-recruitment-task.firebaseapp.com/
+4.  Application is hosted on [Firebase](https://xsolve-recruitment-task.firebaseapp.com/)
