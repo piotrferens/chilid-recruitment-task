@@ -6,10 +6,19 @@ import { setSort } from "../actions/actions";
 
 class SortContainer extends Component {
     render() {
+        const filters = [
+            { name: "id", text: "id" },
+            { name: "firstName", text: "First name" },
+            { name: "lastName", text: "Last name" },
+            { name: "company", text: "Company" },
+            { name: "dateOfBirth", text: "Date of birth" },
+            { name: "note", text: "Note" },
+        ];
         return (
             <SortField>
-                Sorting by: {this.props.sort.by}, order:{" "}
-                {this.props.sort.order === 1 ? "ascending" : "descending"}{" "}
+                Sorting by:{" "}
+                {filters.map(filter => (this.props.sort.by === filter.name ? filter.text : null))},
+                order: {this.props.sort.order === 1 ? "ascending" : "descending"}{" "}
             </SortField>
         );
     }
