@@ -89,9 +89,11 @@ export const PaginationHeader = glamorous.div({
 export const NextPage = glamorous.button({
     background: "none",
     border: "none",
+    outlineStyle: "none",
 });
 
 export const PreviousPage = glamorous.button({
     background: "none",
     border: "none",
+    outlineStyle: "none",
 });
