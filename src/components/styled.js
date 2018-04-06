@@ -57,7 +57,7 @@ export const TableCell = glamorous.div({
 
 export const ArrowUp = glamorous.div({
     position: "absolute",
-    right: 5,
+    right: 2,
     top: 5,
     width: 0,
     height: 0,
@@ -68,7 +68,7 @@ export const ArrowUp = glamorous.div({
 
 export const ArrowDown = glamorous.div({
     position: "absolute",
-    right: 5,
+    right: 2,
     bottom: 5,
     width: 0,
     height: 0,

@@ -20,6 +20,7 @@ export class HeaderContainer extends Component {
                                     : "Sort ascending"
                             }
                         >
+                            {filter.text}
                             {this.props.sort.by === filter.name ? (
                                 this.props.sort.order === 1 ? (
                                     <ArrowUp />
@@ -27,7 +28,6 @@ export class HeaderContainer extends Component {
                                     <ArrowDown />
                                 )
                             ) : null}
-                            {filter.text}
                         </TableHeaderCell>
                     ))}
                 </TableHeaderRow>

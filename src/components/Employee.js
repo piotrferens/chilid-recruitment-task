@@ -6,6 +6,7 @@ export class Employee extends Component {
     render() {
         return (
             <TableRow>
+                <TableCell>{this.props.employee.id}</TableCell>
                 <TableCell>{this.props.employee.firstName}</TableCell>
                 <TableCell>{this.props.employee.lastName}</TableCell>
                 <TableCell>{this.props.employee.company}</TableCell>

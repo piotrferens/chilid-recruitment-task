@@ -2,7 +2,7 @@ import { SET_SORT } from "../actions/actions";
 
 const initialState = {
     order: 1,
-    by: "id",
+    by: null,
 };
 
 export const sort = (state = initialState, action) => {

@@ -7,14 +7,13 @@ import { filters } from "../helpers";
 
 class SortContainer extends Component {
     render() {
-        return (
+        return this.props.sort.by !== null ? (
             <SortField>
                 Sorting by:{" "}
-                {[{ name: "id", text: "id" }, ...filters].map(
-                    filter => (this.props.sort.by === filter.name ? filter.text : null),
-                )}, order: {this.props.sort.order === 1 ? "ascending" : "descending"}{" "}
+                {filters.map(filter => (this.props.sort.by === filter.name ? filter.text : null))},
+                order: {this.props.sort.order === 1 ? "ascending" : "descending"}{" "}
             </SortField>
-        );
+        ) : null;
     }
 }
 

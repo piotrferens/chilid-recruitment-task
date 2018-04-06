@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { setFilter, setSearch } from "../actions/actions";
 import { FilterHeader } from "./styled";
+import { filters } from "../helpers";
 
 class FilterContainer extends Component {
     onChange = action => {
@@ -16,13 +17,12 @@ class FilterContainer extends Component {
             <FilterHeader>
                 <select value={this.props.selected} onChange={this.onChange(this.props.setFilter)}>
                     <option disabled />
-                    <option value="firstName">First name</option>
-                    <option value="lastName">Last name</option>
-                    <option value="company">Company</option>
-                    <option value="dateOfBirth">Date of birth</option>
-                    <option value="note">Note</option>
+                    {filters.map(filter => (
+                        <option key={filter.name} value={filter.name}>
+                            {filter.text}
+                        </option>
+                    ))}
                 </select>
-
                 <input
                     type={this.props.selected !== "dateOfBirth" ? "text" : "date"}
                     value={this.props.searchPhrase}
