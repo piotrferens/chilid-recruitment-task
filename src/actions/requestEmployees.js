@@ -2,7 +2,7 @@ import { fetchEmployees } from "./actions";
 
 export const requestEmployees = () => {
     return dispatch => {
-        fetch("https://xsolve-recruitment-task.firebaseio.com/.json")
+        fetch("https://chilid-recruitment-task.firebaseio.com/.json")
             .then(res => res.json())
             .then(data => {
                 const results = data.employees.map(x => {
