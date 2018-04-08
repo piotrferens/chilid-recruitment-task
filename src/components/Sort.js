@@ -11,7 +11,7 @@ class SortContainer extends Component {
             <SortField>
                 Sorting by:{" "}
                 {filters.map(filter => (this.props.sort.by === filter.name ? filter.text : null))},
-                order: {this.props.sort.order === 1 ? "ascending" : "descending"}{" "}
+                order: {this.props.sort.order === 1 ? "ascending" : "descending"}
             </SortField>
         ) : null;
     }
