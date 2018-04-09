@@ -8,29 +8,47 @@ export const FilterHeader = glamorous.div({
 });
 
 export const Table = glamorous.table({
-    borderCollapse: "collapse",
+    borderCollapse: "separate",
     borderSpacing: 0,
     width: "100%",
-    border: "1px solid #ddd",
+    padding: 5,
 });
-export const TableHeader = glamorous.thead({
-    backgroundColor: "red",
-});
-export const TableHeaderRow = glamorous.tr({
-    backgroundColor: "red",
-});
+export const TableHeader = glamorous.thead({});
+
+export const TableHeaderRow = glamorous.tr({});
 
 export const TableHeaderCell = glamorous.th({
     textAlign: "center",
-    padding: 8,
+    background: "#eee",
+    ":nth-child(n+1):nth-child(-n+5)": {
+        borderRight: "1px solid #ddd",
+    },
+    ":first-child": {
+        borderRadius: "6px 0 0 0",
+    },
+    ":last-child": {
+        borderRadius: "0 6px 0 0",
+    },
 });
 export const TableBody = glamorous.tbody({});
 
-export const TableRow = glamorous.tr({});
+export const TableRow = glamorous.tr({
+    ":last-child td:first-child": {
+        borderRadius: "0 0 0 6px",
+    },
+    ":last-child td:last-child": {
+        borderRadius: "0 0 6px 0",
+    },
+    ":nth-child(2n-2)": {
+        background: "#eee",
+    },
+});
 
 export const TableCell = glamorous.td({
+    ":nth-child(n+1):nth-child(-n+5)": {
+        borderRight: "1px solid #ddd",
+    },
     textAlign: "center",
-    padding: 8,
 });
 
 export const ArrowUp = glamorous.div({});
