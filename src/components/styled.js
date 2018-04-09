@@ -1,7 +1,6 @@
 import glamorous from "glamorous";
 
 export const AppContainer = glamorous.div({
-    background: "#3282ff",
     height: "100vh",
 });
 
@@ -10,61 +9,49 @@ export const FilterHeader = glamorous.div({
     justifyContent: "center",
 });
 
-export const Table = glamorous.table({
-    borderCollapse: "separate",
-    borderSpacing: 0,
-    width: 800,
-    minHeight: 200,
-    padding: 5,
-    fontFamily: "HelveticaNeue",
-});
-export const TableHeader = glamorous.thead({});
-
-export const TableHeaderRow = glamorous.tr({});
-
-export const TableHeaderCell = glamorous.th({
+export const Table = glamorous.div({
+    display: "flex",
+    flexDirection: "column",
     textAlign: "center",
+    margin: "0 auto",
+    minHeight: 250,
+    overflow: "auto",
+});
+export const TableHeader = glamorous.div({
+    display: "flex",
     background: "#e5eefb",
-    color: "#22385a",
+    borderRadius: "5px 5px 0 0",
+});
 
+export const TableHeaderCell = glamorous.div({
+    flex: 1,
+    padding: 10,
     ":nth-child(n+1):nth-child(-n+5)": {
-        borderRight: "1px solid #ddd",
-    },
-    ":first-child": {
-        borderRadius: "6px 0 0 0",
-    },
-    ":last-child": {
-        borderRadius: "0 6px 0 0",
+        borderRight: "1px solid #d6d6d6",
     },
 });
-export const TableBody = glamorous.tbody({
+export const TableBody = glamorous.div({
     color: "#3c4c65",
 });
 
-export const TableRow = glamorous.tr({
-    ":last-child td:first-child": {
-        borderRadius: "0 0 0 6px",
+export const TableRow = glamorous.div({
+    display: "flex",
+    ":nth-child(odd)": {
+        background: "white",
     },
-    ":last-child td:last-child": {
-        borderRadius: "0 0 6px 0",
-    },
-    ":nth-child(2n-2)": {
+    ":nth-child(even)": {
         background: "#e5eefb",
     },
-    ":nth-child(2n-1)": {
-        background: "#ffffff",
+    ":last-child": {
+        borderRadius: "0 0 5px 5px",
     },
 });
 
-export const TableCell = glamorous.td({
-    maxWidth: 100,
-    minWidth: 100,
-    textAlign: "center",
+export const TableCell = glamorous.div({
+    flex: 1,
+    padding: 10,
     ":nth-child(n+1):nth-child(-n+5)": {
-        borderRight: "1px solid #dae0e9",
-    },
-    ":nth-child(2n-1)": {
-        fontWeight: "bold",
+        borderRight: "1px solid #d6d6d6",
     },
 });
 
@@ -76,22 +63,27 @@ export const SortField = glamorous.div({
     color: "white",
     padding: 5,
 });
-export const PaginationHeader = glamorous.tfoot({
+export const PaginationFooter = glamorous.div({
     textAlign: "center",
 });
 
-export const PaginationHeaderRow = glamorous.tr({});
-
-export const PaginationHeaderCell = glamorous.td({});
-
-export const CurrentPage = glamorous.span({
+export const Page = glamorous.span(props => ({
     padding: "0 5px 0 5px",
-});
+    color: props.isActive ? "white" : "black",
+}));
 
-export const ChangePage = glamorous.button(props => ({
+export const ChangePage = glamorous.button({
     background: "none",
     border: "none",
     outlineStyle: "none",
     fontSize: "100%",
-    color: props.disabled ? "black" : "white",
-}));
+    color: "white",
+    cursor: "pointer",
+});
+
+export const SelectFilter = glamorous.select({
+    fontSize: 16,
+    border: "1px solid #ccc",
+    padding: 5,
+    background: "ghostwhite",
+});

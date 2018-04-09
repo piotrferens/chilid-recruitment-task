@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setFilter, setSearch } from "../actions/actions";
-import { FilterHeader } from "./styled";
+import { FilterHeader, SelectFilter } from "./styled";
 import { filters } from "../helpers";
 
 class FilterContainer extends Component {
@@ -15,14 +15,17 @@ class FilterContainer extends Component {
     render() {
         return (
             <FilterHeader>
-                <select value={this.props.selected} onChange={this.onChange(this.props.setFilter)}>
+                <SelectFilter
+                    value={this.props.selected}
+                    onChange={this.onChange(this.props.setFilter)}
+                >
                     <option disabled />
                     {filters.map(filter => (
                         <option key={filter.name} value={filter.name}>
                             {filter.text}
                         </option>
                     ))}
-                </select>
+                </SelectFilter>
                 <input
                     type={this.props.selected !== "dateOfBirth" ? "text" : "date"}
                     value={this.props.searchPhrase}

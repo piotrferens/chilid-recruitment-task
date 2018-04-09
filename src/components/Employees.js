@@ -9,7 +9,6 @@ import { employeesSelector } from "../selectors/employees";
 import { setSort } from "../actions/actions";
 import { Pagination } from "./Pagination";
 import { Filter } from "./Filter";
-import { Sort } from "./Sort";
 
 export class EmployeesContainer extends Component {
     componentDidMount() {
@@ -19,18 +18,29 @@ export class EmployeesContainer extends Component {
         return (
             <div>
                 <Filter />
-                <div style={{ overflowX: "auto", display: "flex", justifyContent: "center" }}>
-                    <Table>
-                        <Header setSort={this.props.setSort} />
+                <Table>
+                    <div
+                        style={{
+                            height: 250,
+                            overflow: "auto",
+                            width: 800,
+                            margin: "0 auto",
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                        }}
+                    >
+                        <div>
+                            <Header setSort={this.props.setSort} />
+                            <TableBody>
+                                {this.props.employees.map(employee => (
+                                    <Employee key={employee.id} employee={employee} />
+                                ))}
+                            </TableBody>
+                        </div>
                         <Pagination />
-                        <TableBody>
-                            {this.props.employees.map(employee => (
-                                <Employee key={employee.id} employee={employee} />
-                            ))}
-                        </TableBody>
-                    </Table>
-                </div>
-                <Sort />
+                    </div>
+                </Table>
             </div>
         );
     }

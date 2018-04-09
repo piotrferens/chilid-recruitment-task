@@ -8,6 +8,6 @@ export const numberOfPagesSelector = createSelector(
     (employees, pagination) => {
         const pages = Math.ceil(employees.length / pagination.itemsPerPage);
 
-        return employees.length === 0 ? 1 : pages;
+        return [...Array(pages).keys()];
     },
 );
