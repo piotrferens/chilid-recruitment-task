@@ -5,10 +5,10 @@ import { setPage } from "../actions/actions";
 import { numberOfPagesSelector } from "../selectors/numberOfPages";
 import {
     PaginationHeader,
-    NextPage,
-    PreviousPage,
     PaginationHeaderRow,
     PaginationHeaderCell,
+    CurrentPage,
+    ChangePage,
 } from "./styled";
 
 class PaginationContainer extends Component {
@@ -18,19 +18,21 @@ class PaginationContainer extends Component {
             <PaginationHeader>
                 <PaginationHeaderRow>
                     <PaginationHeaderCell colSpan="6">
-                        <PreviousPage
+                        <ChangePage
                             disabled={page === 0}
                             onClick={() => this.props.setPage(page - 1)}
                         >
-                            {"<"}
-                        </PreviousPage>
-                        {page + 1} of {this.props.numberOfPages}
-                        <NextPage
+                            {"< back "}
+                        </ChangePage>
+                        <CurrentPage>
+                            {page + 1} of {this.props.numberOfPages}
+                        </CurrentPage>
+                        <ChangePage
                             disabled={page === this.props.numberOfPages - 1}
                             onClick={() => this.props.setPage(page + 1)}
                         >
-                            {">"}
-                        </NextPage>
+                            {" next >"}
+                        </ChangePage>
                     </PaginationHeaderCell>
                 </PaginationHeaderRow>
             </PaginationHeader>

@@ -7,7 +7,6 @@ export const requestEmployees = () => {
             .then(data => {
                 const results = data.employees.map(x => {
                     const [day, month, year, hour] = x.dateOfBirth.split(/\.| /);
-
                     return {
                         ...x,
                         dateOfBirth: `${year}-${month.length === 1 ? "0" + month : month}-${

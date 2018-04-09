@@ -19,7 +19,7 @@ export class EmployeesContainer extends Component {
         return (
             <div>
                 <Filter />
-                <div style={{ overflowX: "auto" }}>
+                <div style={{ overflowX: "auto", display: "flex", justifyContent: "center" }}>
                     <Table>
                         <Header setSort={this.props.setSort} />
                         <Pagination />
