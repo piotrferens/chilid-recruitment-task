@@ -13,11 +13,11 @@ export const requestEmployees = () => {
                     return {
                         ...x,
                         dateOfBirth: dateOfBirth,
-                        displayedDate: new Date(dateOfBirth)
-                            .toUTCString()
-                            .split(/,| /)
-                            .slice(2, 5)
-                            .join(" "),
+                        displayedDate: new Date(dateOfBirth).toLocaleString("en-GB", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                        }),
                     };
                 });
 

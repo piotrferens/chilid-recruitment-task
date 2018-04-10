@@ -42,7 +42,8 @@ export const TableHeader = glamorous.div({
 });
 
 export const TableHeaderCell = glamorous.div({
-    flex: 1,
+    position: "relative",
+    flex: 3,
     display: "flex",
     justifyContent: "center",
     padding: 10,
@@ -50,6 +51,12 @@ export const TableHeaderCell = glamorous.div({
     fontWeight: "bold",
     ":nth-child(n+1):nth-child(-n+5)": {
         borderRight: "1px solid #d6d6d6",
+    },
+    ":first-child": {
+        flex: 1,
+    },
+    ":last-child": {
+        flex: 1,
     },
 });
 export const TableBody = glamorous.div({
@@ -70,13 +77,19 @@ export const TableRow = glamorous.div({
 });
 
 export const TableCell = glamorous.div({
-    flex: 1,
+    flex: 3,
     padding: 10,
     ":nth-child(n+1):nth-child(-n+5)": {
         borderRight: "1px solid #d6d6d6",
     },
     ":nth-child(2n+1)": {
         fontWeight: "bold",
+    },
+    ":first-child": {
+        flex: 1,
+    },
+    ":last-child": {
+        flex: 1,
     },
 });
 
@@ -127,10 +140,10 @@ export const ImgLogo = glamorous.div({
     flexDirection: "column",
     margin: "50px 0 25px 0",
     "@media only screen and (max-width: 576px)": {
-        marginTop: 0,
+        margin: 0,
     },
     "@media only screen and (max-width: 767px) and (min-width: 576px)": {
-        marginTop: 20,
+        margin: "20px 0 0 0 0",
     },
 });
 
@@ -154,7 +167,9 @@ export const WorkersList = glamorous.span({
 });
 
 export const Arrows = glamorous.div({
-    margin: "4px 3px 3px 10px",
+    position: "absolute",
+    right: 15,
+    top: 15,
 });
 
 export const ArrowUp = glamorous.a({
@@ -177,5 +192,4 @@ export const ArrowDown = glamorous.a({
 
 export const ArrowContainer = glamorous.div({
     display: "flex",
-    position: "relative",
 });
