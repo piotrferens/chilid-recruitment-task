@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 import { filterEmployeesSelector } from "./filterEmployees";
 
-export const numberOfPagesSelector = createSelector(
+export const pagesSelector = createSelector(
     filterEmployeesSelector,
     state => state.pagination,
     (employees, pagination) => {

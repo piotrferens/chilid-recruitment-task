@@ -7,12 +7,17 @@ export const requestEmployees = () => {
             .then(data => {
                 const results = data.employees.map(x => {
                     const [day, month, year, hour] = x.dateOfBirth.split(/\.| /);
+                    const dateOfBirth = `${year}-${month.length === 1 ? "0" + month : month}-${
+                        day.length === 1 ? "0" + day : day
+                    } ${hour}`;
                     return {
                         ...x,
-                        dateOfBirth: `${year}-${month.length === 1 ? "0" + month : month}-${
-                            day.length === 1 ? "0" + day : day
-                        } ${hour}`,
-                        displayedDate: x.dateOfBirth,
+                        dateOfBirth: dateOfBirth,
+                        displayedDate: new Date(dateOfBirth)
+                            .toUTCString()
+                            .split(/,| /)
+                            .slice(2, 5)
+                            .join(" "),
                     };
                 });
 

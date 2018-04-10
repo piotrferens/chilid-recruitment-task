@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { requestEmployees } from "../actions/requestEmployees";
 import { Employee } from "./Employee";
 import { Header } from "./Header";
-import { Table, TableBody } from "./styled";
+import { Table, TableBody, TableContainer } from "./styled";
 import { employeesSelector } from "../selectors/employees";
 import { setSort } from "../actions/actions";
 import { Pagination } from "./Pagination";
@@ -19,17 +19,7 @@ export class EmployeesContainer extends Component {
             <div>
                 <Filter />
                 <Table>
-                    <div
-                        style={{
-                            height: 250,
-                            overflow: "auto",
-                            width: 800,
-                            margin: "0 auto",
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "space-between",
-                        }}
-                    >
+                    <TableContainer>
                         <div>
                             <Header setSort={this.props.setSort} />
                             <TableBody>
@@ -38,7 +28,7 @@ export class EmployeesContainer extends Component {
                                 ))}
                             </TableBody>
                         </div>
-                    </div>
+                    </TableContainer>
                 </Table>
                 <Pagination />
             </div>

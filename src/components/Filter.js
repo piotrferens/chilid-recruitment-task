@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setFilter, setSearch } from "../actions/actions";
-import { FilterHeader, SelectFilter } from "./styled";
+import { FilterHeader, SelectFilter, InputFilter } from "./styled";
 import { filters } from "../helpers";
 
 class FilterContainer extends Component {
@@ -26,7 +26,7 @@ class FilterContainer extends Component {
                         </option>
                     ))}
                 </SelectFilter>
-                <input
+                <InputFilter
                     type={this.props.selected !== "dateOfBirth" ? "text" : "date"}
                     value={this.props.searchPhrase}
                     onChange={this.onChange(this.props.setSearch)}

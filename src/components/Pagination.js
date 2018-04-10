@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setPage } from "../actions/actions";
-import { numberOfPagesSelector } from "../selectors/numberOfPages";
+import { pagesSelector } from "../selectors/pagesSelector";
 import { Page, ChangePage, PaginationFooter } from "./styled";
 
 class PaginationContainer extends Component {
@@ -14,12 +14,10 @@ class PaginationContainer extends Component {
                     {"< back "}
                 </ChangePage>
                 {this.props.pages.map(x => (
-                    <Page key={x} isActive={page === x}>
-                        {" "}
+                    <Page key={x} isActive={page === x} onClick={() => this.props.setPage(x)}>
                         {x + 1}
                     </Page>
                 ))}
-
                 <ChangePage
                     disabled={page === this.props.pages.length - 1}
                     onClick={() => this.props.setPage(page + 1)}
@@ -34,7 +32,7 @@ class PaginationContainer extends Component {
 function mapStateToProps(state) {
     return {
         pagination: state.pagination,
-        pages: numberOfPagesSelector(state),
+        pages: pagesSelector(state),
     };
 }
 
