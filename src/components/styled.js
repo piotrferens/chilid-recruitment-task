@@ -28,12 +28,6 @@ export const TableContainer = glamorous.div({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    "@media only screen and (max-width: 576px)": {
-        width: 600,
-    },
-    "@media only screen and (max-width: 767px) and (min-width: 576px)": {
-        width: 767,
-    },
 });
 export const TableHeader = glamorous.div({
     display: "flex",
@@ -168,7 +162,7 @@ export const WorkersList = glamorous.span({
 
 export const Arrows = glamorous.div({
     position: "absolute",
-    right: 15,
+    right: 10,
     top: 15,
 });
 
