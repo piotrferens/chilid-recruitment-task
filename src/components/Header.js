@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { setSort } from "../actions/actions";
-import { TableHeader, TableHeaderCell, ArrowUp, ArrowDown } from "./styled";
+import { TableHeader, TableHeaderCell, ArrowUp, ArrowDown, Arrows } from "./styled";
 import { filters } from "../helpers";
 
 export class HeaderContainer extends Component {
@@ -20,13 +20,28 @@ export class HeaderContainer extends Component {
                         }
                     >
                         {filter.text}
-                        {this.props.sort.by === filter.name ? (
-                            this.props.sort.order === 1 ? (
-                                <ArrowUp />
-                            ) : (
-                                <ArrowDown />
-                            )
-                        ) : null}
+                        {this.props.sort.by !== filter.name ? (
+                            <Arrows>
+                                <div style={{ display: "flex", position: "relative" }}>
+                                    <ArrowUp />
+                                </div>
+                                <div style={{ display: "flex", position: "relative" }}>
+                                    <ArrowDown />
+                                </div>
+                            </Arrows>
+                        ) : this.props.sort.order === 1 && this.props.sort.by === filter.name ? (
+                            <Arrows>
+                                <div style={{ display: "flex", position: "relative" }}>
+                                    <ArrowUp />
+                                </div>
+                            </Arrows>
+                        ) : (
+                            <Arrows>
+                                <div style={{ display: "flex", position: "relative" }}>
+                                    <ArrowDown />
+                                </div>
+                            </Arrows>
+                        )}
                     </TableHeaderCell>
                 ))}
             </TableHeader>

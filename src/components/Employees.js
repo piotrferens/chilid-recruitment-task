@@ -38,9 +38,9 @@ export class EmployeesContainer extends Component {
                                 ))}
                             </TableBody>
                         </div>
-                        <Pagination />
                     </div>
                 </Table>
+                <Pagination />
             </div>
         );
     }

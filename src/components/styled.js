@@ -7,6 +7,7 @@ export const AppContainer = glamorous.div({
 export const FilterHeader = glamorous.div({
     display: "flex",
     justifyContent: "center",
+    marginBottom: 10,
 });
 
 export const Table = glamorous.div({
@@ -25,6 +26,8 @@ export const TableHeader = glamorous.div({
 
 export const TableHeaderCell = glamorous.div({
     flex: 1,
+    display: "flex",
+    justifyContent: "center",
     padding: 10,
     ":nth-child(n+1):nth-child(-n+5)": {
         borderRight: "1px solid #d6d6d6",
@@ -55,16 +58,13 @@ export const TableCell = glamorous.div({
     },
 });
 
-export const ArrowUp = glamorous.div({});
-
-export const ArrowDown = glamorous.div({});
-
 export const SortField = glamorous.div({
     color: "white",
     padding: 5,
 });
 export const PaginationFooter = glamorous.div({
     textAlign: "center",
+    marginTop: 10,
 });
 
 export const Page = glamorous.span(props => ({
@@ -86,4 +86,46 @@ export const SelectFilter = glamorous.select({
     border: "1px solid #ccc",
     padding: 5,
     background: "ghostwhite",
+});
+
+export const ImgLogo = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    margin: "50px 0 0px 0px",
+});
+
+export const ImgEmployee = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    marginTop: 100,
+});
+
+export const WorkersList = glamorous.span({
+    textAlign: "center",
+    fontSize: 48,
+    color: "ghostwhite",
+    fontFamily: "Helvetica Neue",
+});
+
+export const Arrows = glamorous.div({
+    margin: "4px 3px 3px 10px",
+});
+
+export const ArrowUp = glamorous.a({
+    position: "absolute",
+    borderLeft: "4px solid transparent",
+    borderRight: "4px solid transparent",
+    borderBottom: "4px solid black",
+    marginBottom: 1,
+});
+
+export const ArrowDown = glamorous.a({
+    position: "absolute",
+    bottom: -10,
+    borderLeft: "4px solid transparent",
+    borderRight: "4px solid transparent",
+    borderBottom: "4px solid black",
+    transform: "rotate(180deg)",
+    marginTop: 1,
 });
