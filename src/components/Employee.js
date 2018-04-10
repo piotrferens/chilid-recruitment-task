@@ -11,7 +11,6 @@ export class Employee extends Component {
                 <TableCell>{this.props.employee.lastName}</TableCell>
                 <TableCell title="DD/MM/YYYY">{this.props.employee.displayedDate}</TableCell>
                 <TableCell>{this.props.employee.company}</TableCell>
-
                 <TableCell>{this.props.employee.note}</TableCell>
             </TableRow>
         );

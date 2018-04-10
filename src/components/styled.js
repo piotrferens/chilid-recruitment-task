@@ -161,9 +161,7 @@ export const WorkersList = glamorous.span({
 });
 
 export const Arrows = glamorous.div({
-    position: "absolute",
-    right: 10,
-    top: 15,
+    margin: "4px 3px 3px 10px",
 });
 
 export const ArrowUp = glamorous.a({
@@ -186,4 +184,5 @@ export const ArrowDown = glamorous.a({
 
 export const ArrowContainer = glamorous.div({
     display: "flex",
+    position: "relative",
 });
