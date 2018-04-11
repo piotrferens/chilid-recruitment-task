@@ -12,7 +12,7 @@ export class App extends Component {
             <AppContainer>
                 <ImgLogo>
                     <img src={workers} alt="Chilid logo" />
-                    <WorkersList>Workers List</WorkersList>
+                    <WorkersList>Employee List</WorkersList>
                 </ImgLogo>
                 <Employees />
                 <ImgEmployee>

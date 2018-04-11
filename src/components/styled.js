@@ -2,16 +2,7 @@ import glamorous from "glamorous";
 
 export const AppContainer = glamorous.div({});
 
-export const FilterHeader = glamorous.div({
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: 10,
-    "@media only screen and (max-width: 767px)": {
-        flexDirection: "column",
-        marginBottom: 0,
-    },
-});
-
+/* TABELA */
 export const Table = glamorous.div({
     display: "flex",
     flexDirection: "column",
@@ -19,6 +10,9 @@ export const Table = glamorous.div({
     margin: "0 auto",
     minHeight: 250,
     overflow: "auto",
+    "@media only screen and (max-width: 768px)": {
+        minHeight: 180,
+    },
 });
 
 export const TableContainer = glamorous.div({
@@ -28,7 +22,14 @@ export const TableContainer = glamorous.div({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    "@media only screen and (max-width: 768px)": {
+        width: 768,
+        fontSize: 14,
+    },
 });
+
+/* HEADER TABELI */
+
 export const TableHeader = glamorous.div({
     display: "flex",
     background: "#e5eefb",
@@ -52,7 +53,15 @@ export const TableHeaderCell = glamorous.div({
     ":last-child": {
         flex: 1,
     },
+    "@media only screen and (max-width: 768px)": {
+        padding: 5,
+    },
 });
+
+/* KONIEC HEADERA TABELI */
+
+/* BODY TABELI */
+
 export const TableBody = glamorous.div({
     color: "#3c4c65",
 });
@@ -85,12 +94,48 @@ export const TableCell = glamorous.div({
     ":last-child": {
         flex: 1,
     },
+    "@media only screen and (max-width: 768px)": {
+        padding: 5,
+    },
 });
 
-export const SortField = glamorous.div({
-    color: "white",
-    padding: 5,
+/* KONIEC BODY TABELI */
+/* KONIEC TABELI */
+
+/* FILTER */
+
+export const FilterHeader = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: 10,
+    "@media only screen and (max-width: 768px)": {
+        flexDirection: "column",
+        marginBottom: 0,
+    },
 });
+
+export const SelectFilter = glamorous.select({
+    fontSize: 16,
+    border: "1px solid #ccc",
+    padding: 5,
+    background: "ghostwhite",
+    "@media only screen and (max-width: 768px)": {
+        textAlignLast: "center",
+        fontSize: 14,
+    },
+});
+
+export const InputFilter = glamorous.input({
+    "@media only screen and (max-width: 768px)": {
+        padding: 5,
+        textAlign: "center",
+    },
+});
+
+/* KONIEC FILTRA */
+
+/* PAGINACJA */
+
 export const PaginationFooter = glamorous.div({
     textAlign: "center",
     marginTop: 10,
@@ -111,54 +156,9 @@ export const ChangePage = glamorous.button({
     cursor: "pointer",
 });
 
-export const SelectFilter = glamorous.select({
-    fontSize: 16,
-    border: "1px solid #ccc",
-    padding: 5,
-    background: "ghostwhite",
-    "@media only screen and (max-width: 767px)": {
-        textAlignLast: "center",
-    },
-});
+/* KONIEC PAGINACJI */
 
-export const InputFilter = glamorous.input({
-    "@media only screen and (max-width: 767px)": {
-        padding: 5,
-        textAlign: "center",
-    },
-});
-
-export const ImgLogo = glamorous.div({
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    margin: "50px 0 25px 0",
-    "@media only screen and (max-width: 576px)": {
-        margin: 0,
-    },
-    "@media only screen and (max-width: 767px) and (min-width: 576px)": {
-        margin: "20px 0 0 0 0",
-    },
-});
-
-export const ImgEmployee = glamorous.div({
-    display: "flex",
-    justifyContent: "center",
-    marginTop: 50,
-    "@media only screen and (max-width: 576px)": {
-        marginTop: 5,
-    },
-    "@media only screen and (max-width: 767px) and (min-width: 576px)": {
-        marginTop: 10,
-    },
-});
-
-export const WorkersList = glamorous.span({
-    textAlign: "center",
-    fontSize: 48,
-    color: "ghostwhite",
-    fontFamily: "Helvetica Neue",
-});
+/* STRZAŁKI DO SORTOWANIA */
 
 export const Arrows = glamorous.div({
     margin: "4px 3px 3px 10px",
@@ -185,4 +185,40 @@ export const ArrowDown = glamorous.a({
 export const ArrowContainer = glamorous.div({
     display: "flex",
     position: "relative",
+});
+
+/* KONIEC STRZAŁEK DO SORTOWANIA*/
+
+/* LOGO EMPLOYEE, NAPIS I CHILID LOGO */
+
+export const ImgLogo = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    margin: "50px 0 25px 0",
+    "@media only screen and (max-width: 576px)": {
+        margin: 0,
+    },
+    "@media only screen and (max-width: 768px) and (min-width: 576px)": {
+        margin: "20px 0 0 0 0",
+    },
+});
+
+export const ImgEmployee = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    marginTop: 50,
+    "@media only screen and (max-width: 576px)": {
+        marginTop: 5,
+    },
+    "@media only screen and (max-width: 768px) and (min-width: 576px)": {
+        marginTop: 10,
+    },
+});
+
+export const WorkersList = glamorous.span({
+    textAlign: "center",
+    fontSize: 48,
+    color: "ghostwhite",
+    fontFamily: "Helvetica Neue",
 });
