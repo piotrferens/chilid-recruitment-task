@@ -10,6 +10,7 @@ export const Table = glamorous.div({
     margin: "0 auto",
     minHeight: 250,
     overflow: "auto",
+
     "@media only screen and (max-width: 768px)": {
         minHeight: 180,
     },
@@ -26,6 +27,7 @@ export const TableContainer = glamorous.div({
         width: 768,
         fontSize: 14,
     },
+    boxShadow: "10px 10px 5px 5px #225db9",
 });
 
 /* HEADER TABELI */
@@ -191,16 +193,23 @@ export const ArrowContainer = glamorous.div({
 
 /* LOGO EMPLOYEE, NAPIS I CHILID LOGO */
 
+export const WorkersList = glamorous.span({
+    textAlign: "center",
+    fontSize: 48,
+    color: "ghostwhite",
+    fontFamily: "Helvetica Neue",
+});
+
 export const ImgLogo = glamorous.div({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
     margin: "50px 0 25px 0",
     "@media only screen and (max-width: 576px)": {
-        margin: 0,
+        margin: "10px 0 10px 0",
     },
     "@media only screen and (max-width: 768px) and (min-width: 576px)": {
-        margin: "20px 0 0 0 0",
+        margin: "20px 0 20px 0",
     },
 });
 
@@ -209,16 +218,9 @@ export const ImgEmployee = glamorous.div({
     justifyContent: "center",
     marginTop: 50,
     "@media only screen and (max-width: 576px)": {
-        marginTop: 5,
+        marginTop: 20,
     },
     "@media only screen and (max-width: 768px) and (min-width: 576px)": {
-        marginTop: 10,
+        marginTop: 40,
     },
-});
-
-export const WorkersList = glamorous.span({
-    textAlign: "center",
-    fontSize: 48,
-    color: "ghostwhite",
-    fontFamily: "Helvetica Neue",
 });

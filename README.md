@@ -1,4 +1,4 @@
-# xsolve-RECRUITMENT-TASK
+# chilid-recruitment-task
 
 ## Installation
 
